@@ -65,25 +65,20 @@ public class VentanaCesar extends JFrame{
         this.boton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-               
-               String letras= "ABCDEFGHIJKMNÑSOPQRSTUVWXYZ";
-               String textoco=""; 
-               cuadroTexto3 = cuadroTexto2; 
-               char caracter; 
-                for (int i = 0; i< cuadroTexto2.length(); i++) {
-                    caracter = texto.charAt(i); 
-                    int pos = letras.indexOf(caracter);  
-                    if (pos==-1) {
-                        textoco+=caracter; 
-                    }else{
-                        textoco=letras.charAt(pos + cuadroTexto); 
+                String letras1= "ABCDEFGHIJKMNÑSOPQRSTUVWXYZ";
+                String clave = cuadroTexto2.getText();
+                char letras[] = clave.toCharArray();
+                for (int i = 0; i < letras.length; i++) {
+                    letras[i] =(char)(letras[i]+(char)1);
                 }
-                    
-            }
+                String cif = String.valueOf(letras); 
+                cuadroTexto3.setText(cif);
                }                       
        });
-        
+                       
+              
     }
+}
 
 
         
